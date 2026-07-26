@@ -2,197 +2,508 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Form & Function explores how interior spaces balance beauty and purpose.">
-  <title>Form & Function</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <header class="site-header">
-    <a class="logo" href="#home">FORM <span>&</span> FUNCTION</a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Form & Function is an interactive interior design guide that explores room layouts, decorating styles, transformations, and design principles."
+  >
+
+  <title>Form & Function | Interior Design Guide</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top">
+
+  <!-- Header and navigation -->
+
+  <header class="site-header">
+    <a class="logo" href="#top">
+      FORM <span>&</span> FUNCTION
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="mainNav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
-    <nav class="main-nav" id="mainNav">
-      <a href="#home">Home</a>
-      <a href="#rooms">Explore Rooms</a>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#showcase">Room Designer</a>
+      <a href="#transformation">Before & After</a>
       <a href="#principles">Design Principles</a>
-      <a href="#inspiration">Inspiration</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" id="home">
+
+    <!-- Hero section -->
+
+    <section class="hero">
       <div class="hero-content">
-        <p class="eyebrow">INTERIOR DESIGN EXPERIENCE</p>
+        <p class="eyebrow">INTERIOR DESIGN MADE SIMPLE</p>
+
         <h1>Form & Function</h1>
-        <p class="hero-subtitle">The Art of Designing Interior Spaces</p>
-        <a class="button primary-button" href="#rooms">Explore the Spaces</a>
+
+        <p class="hero-subtitle">
+          Explore how thoughtful layouts, color, furniture, and design
+          principles can transform everyday rooms.
+        </p>
+
+        <a class="button primary-button" href="#rooms">
+          Explore the Rooms
+        </a>
       </div>
     </section>
 
-    <section class="intro section">
+    <!-- Introduction -->
+
+    <section class="section intro" id="about">
       <div>
-        <p class="eyebrow">INTRODUCTION</p>
-        <h2>Designing spaces that look good and work well</h2>
+        <p class="eyebrow">ABOUT THE EXPERIENCE</p>
+
+        <h2>Design spaces that look good and work well.</h2>
       </div>
+
       <p>
-        Form describes how a room looks, while function describes how well it supports everyday life.
-        Thoughtful interior design brings these two ideas together through color, lighting, furniture,
-        materials, texture, and layout. This website explores how those choices can transform the spaces
-        we call home.
+        Form & Function is an interactive interior design guide created to
+        help users understand how design choices affect the appearance and
+        usability of a room. Explore four common rooms, compare different
+        decorating styles, view a before-and-after transformation, and learn
+        the main principles that help create balanced and functional spaces.
       </p>
     </section>
 
+    <!-- Room selection -->
+
     <section class="section rooms-section" id="rooms">
       <div class="section-heading">
-        <p class="eyebrow">EXPLORE THE ROOMS</p>
-        <h2>Choose a space</h2>
-        <p>Use the cards to explore four different interior spaces.</p>
+        <p class="eyebrow">CHOOSE A SPACE</p>
+
+        <h2>Explore four rooms</h2>
+
+        <p>
+          Select a room to view its suggested colors, furniture, materials,
+          layout, and decorating tips.
+        </p>
       </div>
 
       <div class="room-grid">
+
         <article class="room-card">
-          <img src="images/living-room.svg" alt="Modern living room illustration">
+          <img
+            src="images/living-room.svg"
+            alt="Illustrated modern living room"
+          >
+
           <div class="card-content">
             <h3>Living Room</h3>
-            <p>A welcoming gathering space designed for comfort, conversation, and movement.</p>
-            <button class="room-button" data-room="living">View More</button>
+
+            <p>
+              Create a comfortable gathering space with balanced furniture,
+              clear pathways, and layered lighting.
+            </p>
+
+            <button
+              class="room-button"
+              type="button"
+              data-room="living"
+            >
+              View Living Room
+            </button>
           </div>
         </article>
 
         <article class="room-card">
-          <img src="images/bedroom.svg" alt="Calm bedroom illustration">
+          <img
+            src="images/bedroom.svg"
+            alt="Illustrated calm bedroom"
+          >
+
           <div class="card-content">
             <h3>Bedroom</h3>
-            <p>A peaceful retreat supported by soft colors, practical storage, and layered lighting.</p>
-            <button class="room-button" data-room="bedroom">View More</button>
+
+            <p>
+              Build a peaceful room using soft colors, comfortable textiles,
+              organized storage, and relaxing lighting.
+            </p>
+
+            <button
+              class="room-button"
+              type="button"
+              data-room="bedroom"
+            >
+              View Bedroom
+            </button>
           </div>
         </article>
 
         <article class="room-card">
-          <img src="images/kitchen.svg" alt="Functional kitchen illustration">
+          <img
+            src="images/kitchen.svg"
+            alt="Illustrated functional kitchen"
+          >
+
           <div class="card-content">
             <h3>Kitchen</h3>
-            <p>An efficient workspace where storage, movement, and durable materials matter.</p>
-            <button class="room-button" data-room="kitchen">View More</button>
+
+            <p>
+              Support cooking and movement with practical storage, durable
+              materials, and an efficient work area.
+            </p>
+
+            <button
+              class="room-button"
+              type="button"
+              data-room="kitchen"
+            >
+              View Kitchen
+            </button>
           </div>
         </article>
 
         <article class="room-card">
-          <img src="images/bathroom.svg" alt="Spa-inspired bathroom illustration">
+          <img
+            src="images/bathroom.svg"
+            alt="Illustrated spa-inspired bathroom"
+          >
+
           <div class="card-content">
             <h3>Bathroom</h3>
-            <p>A clean and calming environment that balances storage with spa-like details.</p>
-            <button class="room-button" data-room="bathroom">View More</button>
+
+            <p>
+              Combine useful storage, moisture-resistant materials, and soft
+              details to create a calm space.
+            </p>
+
+            <button
+              class="room-button"
+              type="button"
+              data-room="bathroom"
+            >
+              View Bathroom
+            </button>
           </div>
         </article>
+
       </div>
     </section>
 
+    <!-- Interactive selected room section -->
+
     <section class="section showcase" id="showcase">
       <div class="showcase-image-wrap">
-        <img id="roomImage" src="images/living-room.svg" alt="Selected living room design">
+        <img
+          id="roomImage"
+          src="images/living-room.svg"
+          alt="Selected living room design"
+        >
       </div>
 
       <div class="showcase-content">
-        <p class="eyebrow">SELECTED ROOM FEATURE</p>
+        <p class="eyebrow">SELECTED ROOM</p>
+
         <h2 id="roomTitle">Living Room</h2>
+
         <p id="roomDescription">
-          This living room uses an open furniture arrangement, warm neutral colors, layered lighting,
-          and soft textures to create a comfortable place for conversation and relaxation.
+          This living room uses an open furniture arrangement, warm neutral
+          colors, layered lighting, and soft textures to create a comfortable
+          place for conversation and relaxation.
         </p>
 
         <div class="room-details">
           <div>
-            <strong>Color palette</strong>
-            <span id="roomPalette">Cream, olive, walnut, and warm white</span>
+            <strong>Color Palette</strong>
+
+            <span id="roomPalette">
+              Cream, olive, walnut, and warm white
+            </span>
           </div>
+
           <div>
-            <strong>Furniture & décor</strong>
-            <span id="roomFurniture">Sectional sofa, accent chair, coffee table, rug, and floor lamp</span>
+            <strong>Furniture</strong>
+
+            <span id="roomFurniture">
+              Sectional sofa, accent chair, coffee table, rug, and floor lamp
+            </span>
           </div>
+
           <div>
-            <strong>Materials & textures</strong>
-            <span id="roomMaterials">Linen, wood, wool, glass, and woven fabric</span>
+            <strong>Materials</strong>
+
+            <span id="roomMaterials">
+              Linen, wood, wool, glass, and woven fabric
+            </span>
           </div>
+
           <div>
             <strong>Layout</strong>
-            <span id="roomLayout">Seating faces a central focal point while leaving clear walking paths</span>
+
+            <span id="roomLayout">
+              Seating faces a central focal point while leaving clear walking
+              paths
+            </span>
           </div>
+
           <div>
-            <strong>Functional tip</strong>
-            <span id="roomTip">Keep the main walkway open between entrances and seating areas</span>
+            <strong>Design Tip</strong>
+
+            <span id="roomTip">
+              Keep the main walkway open between entrances and seating areas
+            </span>
           </div>
         </div>
 
-        <div class="style-selector">
-          <p><strong>Select a design style:</strong></p>
-          <div class="style-buttons">
-            <button class="style-button active" data-style="modern">Modern</button>
-            <button class="style-button" data-style="minimalist">Minimalist</button>
-            <button class="style-button" data-style="coastal">Coastal</button>
-            <button class="style-button" data-style="contemporary">Contemporary</button>
-          </div>
+        <h3>Choose a design style</h3>
+
+        <div class="style-buttons" aria-label="Room style options">
+          <button
+            class="style-button active"
+            type="button"
+            data-style="modern"
+          >
+            Modern
+          </button>
+
+          <button
+            class="style-button"
+            type="button"
+            data-style="minimalist"
+          >
+            Minimalist
+          </button>
+
+          <button
+            class="style-button"
+            type="button"
+            data-style="coastal"
+          >
+            Coastal
+          </button>
+
+          <button
+            class="style-button"
+            type="button"
+            data-style="contemporary"
+          >
+            Contemporary
+          </button>
         </div>
       </div>
     </section>
 
-    <section class="section before-after" id="inspiration">
+    <!-- Before and after section -->
+
+    <section
+      class="section before-after"
+      id="transformation"
+    >
       <div class="section-heading">
-        <p class="eyebrow">BEFORE & AFTER</p>
-        <h2>See the transformation</h2>
-        <p>Click the button to compare an unfinished space with a redesigned interior.</p>
+        <p class="eyebrow">ROOM TRANSFORMATION</p>
+
+        <h2>See the difference design makes</h2>
+
+        <p>
+          Use the button to compare an unfinished room with a more complete,
+          balanced, and functional design.
+        </p>
       </div>
 
       <div class="transformation-card">
-        <img id="transformationImage" src="images/before-room.svg" alt="Room before interior design transformation">
+        <img
+          id="transformationImage"
+          src="images/before-room.svg"
+          alt="Room before interior design transformation"
+        >
+
         <div class="transformation-copy">
-          <p class="status" id="transformationStatus">BEFORE</p>
-          <h3 id="transformationTitle">An unfinished room</h3>
-          <p id="transformationText">
-            The room lacks a clear focal point, balanced furniture placement, layered lighting,
-            and decorative details that make the space feel complete.
+          <p class="status" id="transformationStatus">
+            BEFORE
           </p>
-          <button class="button primary-button" id="toggleDesign">Show After Design</button>
+
+          <h3 id="transformationTitle">
+            An unfinished room
+          </h3>
+
+          <p id="transformationText">
+            The room lacks a clear focal point, balanced furniture placement,
+            layered lighting, and decorative details that make the space feel
+            complete.
+          </p>
+
+          <button
+            class="button primary-button"
+            id="toggleDesign"
+            type="button"
+          >
+            Show After Design
+          </button>
         </div>
       </div>
     </section>
 
+    <!-- Design Principles section -->
+
     <section class="section principles" id="principles">
-      <div class="section-heading">
-        <p class="eyebrow">DESIGN PRINCIPLES</p>
-        <h2>What makes a space work?</h2>
+
+      <!-- Added divider for stronger visual separation -->
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- Added clearer introduction from the revision plan -->
+
+      <div class="section-heading principles-intro">
+        <p class="eyebrow">FOUNDATIONS OF INTERIOR DESIGN</p>
+
+        <h2>Design principles for every room</h2>
+
+        <p>
+          The principles below are not connected to only one specific room.
+          They are general interior design guidelines that can be applied
+          throughout a home to create spaces that feel organized, comfortable,
+          balanced, and visually connected.
+        </p>
       </div>
 
       <div class="principle-grid">
-        <article><span>01</span><h3>Balance</h3><p>Distribute visual weight so the room feels stable and intentional.</p></article>
-        <article><span>02</span><h3>Contrast</h3><p>Combine differences in color, shape, or texture to add interest.</p></article>
-        <article><span>03</span><h3>Lighting</h3><p>Layer natural, ambient, task, and accent lighting for different needs.</p></article>
-        <article><span>04</span><h3>Flow</h3><p>Arrange furniture so people can move easily through the room.</p></article>
-        <article><span>05</span><h3>Color</h3><p>Use a consistent palette to create mood and connect the space.</p></article>
-        <article><span>06</span><h3>Scale</h3><p>Choose furniture and décor that fit the size and proportions of the room.</p></article>
-        <article><span>07</span><h3>Texture</h3><p>Mix soft, smooth, woven, and natural surfaces to create depth.</p></article>
-        <article><span>08</span><h3>Function</h3><p>Make every design choice support the purpose of the room.</p></article>
+
+        <article>
+          <span>01</span>
+
+          <h3>Balance</h3>
+
+          <p>
+            Distribute furniture, color, and visual weight throughout a room
+            so that one side does not feel heavier than another.
+          </p>
+        </article>
+
+        <article>
+          <span>02</span>
+
+          <h3>Contrast</h3>
+
+          <p>
+            Combine differences in color, texture, shape, or material to make
+            important elements stand out.
+          </p>
+        </article>
+
+        <article>
+          <span>03</span>
+
+          <h3>Emphasis</h3>
+
+          <p>
+            Create a clear focal point, such as artwork, a fireplace, a bed,
+            or another feature that attracts attention.
+          </p>
+        </article>
+
+        <article>
+          <span>04</span>
+
+          <h3>Rhythm</h3>
+
+          <p>
+            Repeat colors, shapes, patterns, or materials to guide the eye
+            through the room and create visual consistency.
+          </p>
+        </article>
+
+        <article>
+          <span>05</span>
+
+          <h3>Scale</h3>
+
+          <p>
+            Choose furniture and decorations that fit the size of the room
+            and relate appropriately to one another.
+          </p>
+        </article>
+
+        <article>
+          <span>06</span>
+
+          <h3>Unity</h3>
+
+          <p>
+            Use related colors, materials, and styles so that all parts of the
+            room feel like they belong together.
+          </p>
+        </article>
+
+        <article>
+          <span>07</span>
+
+          <h3>Function</h3>
+
+          <p>
+            Make sure the room supports the activities that take place there
+            and meets the practical needs of its users.
+          </p>
+        </article>
+
+        <article>
+          <span>08</span>
+
+          <h3>Flow</h3>
+
+          <p>
+            Arrange furniture so people can move comfortably through the room
+            without blocked entrances or crowded pathways.
+          </p>
+        </article>
+
       </div>
     </section>
+
   </main>
 
+  <!-- Footer -->
+
   <footer>
-    <div>
-      <p class="footer-title">FORM & FUNCTION</p>
-      <p>The Art of Designing Interior Spaces</p>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
+    <p class="footer-title">
+      FORM & FUNCTION
+    </p>
+
+    <nav aria-label="Footer navigation">
+      <a href="#about">About</a>
       <a href="#rooms">Rooms</a>
+      <a href="#transformation">Before & After</a>
       <a href="#principles">Principles</a>
-      <a href="#inspiration">Inspiration</a>
     </nav>
-    <p>Prototype images created for this student project.</p>
+
+    <p>
+      Designed and developed by Desirae Torrence
+    </p>
   </footer>
+
+  <!-- Added Back to Top button from the revision plan -->
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to the top of the page"
+  >
+    ↑ Top
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>
