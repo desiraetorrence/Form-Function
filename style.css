@@ -110,7 +110,7 @@ button:focus-visible {
   background: var(--text);
 }
 
-/* Hero */
+/* Hero section */
 
 .hero {
   min-height: 78vh;
@@ -217,7 +217,7 @@ h3 {
   color: var(--muted);
 }
 
-/* Stronger contrast between sections */
+/* Increased section contrast */
 
 .rooms-section {
   width: 100%;
@@ -293,7 +293,7 @@ h3 {
   color: var(--white);
 }
 
-/* Selected room feature */
+/* Selected room section */
 
 .showcase {
   display: grid;
@@ -372,7 +372,7 @@ h3 {
   letter-spacing: 0.18em;
 }
 
-/* Design principles clarification */
+/* Clearer Design Principles section */
 
 .principles {
   padding-top: 8rem;
@@ -678,7 +678,7 @@ footer > p:last-child {
   }
 }
 
-/* Accessibility */
+/* Reduced motion accessibility */
 
 @media (prefers-reduced-motion: reduce) {
   html {
