@@ -1,102 +1,173 @@
-const rooms = {
+// ========================================
+// FORM & FUNCTION
+// Interactive Website JavaScript
+// ========================================
+
+
+// ========================================
+// ROOM INFORMATION
+// ========================================
+
+const roomData = {
   living: {
     title: "Living Room",
-    image: "images/living-room.svg",
-    alt: "Selected living room design",
+
     description:
       "This living room uses an open furniture arrangement, warm neutral colors, layered lighting, and soft textures to create a comfortable place for conversation and relaxation.",
-    palette: "Cream, olive, walnut, and warm white",
+
+    palette:
+      "Cream, olive, walnut, and warm white",
+
     furniture:
       "Sectional sofa, accent chair, coffee table, rug, and floor lamp",
-    materials: "Linen, wood, wool, glass, and woven fabric",
+
+    materials:
+      "Linen, wood, wool, glass, and woven fabric",
+
     layout:
       "Seating faces a central focal point while leaving clear walking paths",
+
     tip:
-      "Keep the main walkway open between entrances and seating areas"
+      "Keep the main walkway open between entrances and seating areas",
+
+    image:
+      "images/living-room.svg",
+
+    alt:
+      "Selected living room interior design"
   },
 
   bedroom: {
     title: "Bedroom",
-    image: "images/bedroom.svg",
-    alt: "Selected bedroom design",
+
     description:
-      "This bedroom creates a restful atmosphere through soft colors, limited visual clutter, comfortable textiles, and lighting that can shift from practical to relaxing.",
-    palette: "Warm white, beige, dusty rose, and light oak",
+      "This bedroom uses soft colors, comfortable textiles, organized storage, and warm lighting to create a peaceful space for resting and relaxing.",
+
+    palette:
+      "Soft beige, muted green, white, and natural wood",
+
     furniture:
-      "Upholstered bed, nightstands, dresser, bench, and bedside lamps",
-    materials: "Cotton, boucle, oak, linen, and woven fiber",
+      "Bed, nightstands, dresser, bench, and reading chair",
+
+    materials:
+      "Cotton, linen, wood, wool, and soft upholstery",
+
     layout:
-      "The bed is centered as the focal point with balanced storage on both sides",
+      "The bed serves as the main focal point with balanced furniture placed around it",
+
     tip:
-      "Use closed storage to reduce visual clutter and support relaxation"
+      "Leave enough space around the bed so users can move comfortably",
+
+    image:
+      "images/bedroom.svg",
+
+    alt:
+      "Selected bedroom interior design"
   },
 
   kitchen: {
     title: "Kitchen",
-    image: "images/kitchen.svg",
-    alt: "Selected kitchen design",
+
     description:
-      "This kitchen supports efficient movement by placing food storage, preparation space, and cooking areas within easy reach while using durable, easy-to-clean materials.",
-    palette: "Ivory, sage green, natural oak, and brushed metal",
+      "This kitchen combines practical storage, durable materials, useful lighting, and an efficient layout to support cooking, cleaning, and movement.",
+
+    palette:
+      "Warm white, sage green, charcoal, and light wood",
+
     furniture:
-      "Island seating, cabinetry, open shelves, pendant lights, and stools",
-    materials: "Quartz, ceramic tile, wood, glass, and brushed metal",
+      "Kitchen island, stools, cabinets, shelving, and dining table",
+
+    materials:
+      "Wood, stone, tile, metal, and glass",
+
     layout:
-      "The work areas create an efficient path between the sink, stove, and refrigerator",
+      "The refrigerator, sink, and stove are positioned to support an efficient work area",
+
     tip:
-      "Store frequently used items close to the area where they are needed"
+      "Keep frequently used items close to the main food preparation area",
+
+    image:
+      "images/kitchen.svg",
+
+    alt:
+      "Selected kitchen interior design"
   },
 
   bathroom: {
     title: "Bathroom",
-    image: "images/bathroom.svg",
-    alt: "Selected bathroom design",
+
     description:
-      "This bathroom combines practical storage and moisture-resistant materials with soft lighting, natural textures, and a simple palette for a calm spa-like feeling.",
-    palette: "Stone, white, eucalyptus green, and natural wood",
+      "This bathroom uses moisture-resistant materials, useful storage, calming colors, and soft details to create a clean and spa-inspired environment.",
+
+    palette:
+      "White, sand, muted blue, and natural wood",
+
     furniture:
-      "Floating vanity, mirror, shelving, storage baskets, and wall lighting",
-    materials: "Ceramic tile, glass, cotton, stone, and sealed wood",
+      "Vanity, mirror, shelving, storage cabinet, and stool",
+
+    materials:
+      "Tile, stone, glass, wood, and metal",
+
     layout:
-      "The vanity, shower, and storage are arranged to keep the floor open and accessible",
+      "Fixtures are arranged to preserve open floor space and support everyday routines",
+
     tip:
-      "Use closed storage for clutter and open storage for attractive everyday items"
+      "Use vertical storage to organize products without taking up floor space",
+
+    image:
+      "images/bathroom.svg",
+
+    alt:
+      "Selected bathroom interior design"
   }
 };
 
-const styles = {
+
+// ========================================
+// STYLE INFORMATION
+// ========================================
+
+const styleData = {
   modern: {
     description:
-      "Clean lines, useful furniture, and a warm neutral palette create a polished but comfortable room.",
+      "Modern design uses clean lines, simple shapes, neutral colors, and functional furniture to create an organized and polished space.",
+
     palette:
-      "Warm neutrals with black, olive, or walnut accents"
+      "Cream, black, warm white, and natural wood"
   },
 
   minimalist: {
     description:
-      "Fewer objects, hidden storage, and open space keep the room calm, functional, and easy to maintain.",
+      "Minimalist design focuses on simplicity, open space, limited decoration, and only the furniture and objects that serve a clear purpose.",
+
     palette:
-      "White, beige, light gray, and pale natural wood"
+      "White, light gray, beige, and pale wood"
   },
 
   coastal: {
     description:
-      "Light colors, natural fibers, and airy details make the room feel relaxed, bright, and connected to nature.",
+      "Coastal design uses light colors, natural materials, soft textures, and ocean-inspired details to create a bright and relaxed atmosphere.",
+
     palette:
-      "Soft white, sand, pale blue, and weathered wood"
+      "White, sand, soft blue, and natural tan"
   },
 
   contemporary: {
     description:
-      "Current shapes, layered textures, and bold accents give the room a fresh and expressive appearance.",
+      "Contemporary design combines current trends with smooth shapes, bold accents, layered textures, and a balance of comfort and visual interest.",
+
     palette:
-      "Neutral foundation with bold accent colors and mixed finishes"
+      "Warm gray, cream, charcoal, and muted green"
   }
 };
 
-let currentRoom = "living";
 
-/* Selected room elements */
+// ========================================
+// SELECT HTML ELEMENTS
+// ========================================
+
+const roomButtons = document.querySelectorAll(".room-button");
+const styleButtons = document.querySelectorAll(".style-button");
 
 const roomImage = document.getElementById("roomImage");
 const roomTitle = document.getElementById("roomTitle");
@@ -107,127 +178,202 @@ const roomMaterials = document.getElementById("roomMaterials");
 const roomLayout = document.getElementById("roomLayout");
 const roomTip = document.getElementById("roomTip");
 
-/* Room selector interaction */
+const showcaseSection = document.getElementById("showcase");
 
-document.querySelectorAll(".room-button").forEach((button) => {
-  button.addEventListener("click", () => {
-    currentRoom = button.dataset.room;
 
-    const room = rooms[currentRoom];
+// ========================================
+// CURRENT ROOM
+// ========================================
 
+let selectedRoom = "living";
+
+
+// ========================================
+// UPDATE SELECTED ROOM
+// ========================================
+
+function updateRoom(roomName) {
+  const room = roomData[roomName];
+
+  if (!room) {
+    return;
+  }
+
+  selectedRoom = roomName;
+
+  if (roomTitle) {
+    roomTitle.textContent = room.title;
+  }
+
+  if (roomDescription) {
+    roomDescription.textContent = room.description;
+  }
+
+  if (roomPalette) {
+    roomPalette.textContent = room.palette;
+  }
+
+  if (roomFurniture) {
+    roomFurniture.textContent = room.furniture;
+  }
+
+  if (roomMaterials) {
+    roomMaterials.textContent = room.materials;
+  }
+
+  if (roomLayout) {
+    roomLayout.textContent = room.layout;
+  }
+
+  if (roomTip) {
+    roomTip.textContent = room.tip;
+  }
+
+  if (roomImage) {
     roomImage.src = room.image;
     roomImage.alt = room.alt;
-    roomTitle.textContent = room.title;
-    roomDescription.textContent = room.description;
-    roomPalette.textContent = room.palette;
-    roomFurniture.textContent = room.furniture;
-    roomMaterials.textContent = room.materials;
-    roomLayout.textContent = room.layout;
-    roomTip.textContent = room.tip;
+  }
 
-    /* Reset the style selector to Modern */
+  // Reset style buttons to Modern whenever a new room is selected.
+  styleButtons.forEach((button) => {
+    button.classList.remove("active");
 
-    document.querySelectorAll(".style-button").forEach((styleButton) => {
-      styleButton.classList.remove("active");
+    if (button.dataset.style === "modern") {
+      button.classList.add("active");
+    }
+  });
+
+  // Scroll to the selected room details.
+  if (showcaseSection) {
+    showcaseSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
+  }
+}
 
-    const modernButton = document.querySelector(
-      '.style-button[data-style="modern"]'
-    );
 
-    if (modernButton) {
-      modernButton.classList.add("active");
-    }
+// ========================================
+// ROOM BUTTON EVENTS
+// ========================================
 
-    /* Scroll to the selected room information */
+roomButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const roomName = button.dataset.room;
 
-    const showcaseSection = document.getElementById("showcase");
-
-    if (showcaseSection) {
-      showcaseSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
+    updateRoom(roomName);
   });
 });
 
-/* Design style selector interaction */
 
-document.querySelectorAll(".style-button").forEach((button) => {
+// ========================================
+// STYLE BUTTON EVENTS
+// ========================================
+
+styleButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".style-button").forEach((styleButton) => {
+    const styleName = button.dataset.style;
+    const style = styleData[styleName];
+    const room = roomData[selectedRoom];
+
+    if (!style || !room) {
+      return;
+    }
+
+    styleButtons.forEach((styleButton) => {
       styleButton.classList.remove("active");
     });
 
     button.classList.add("active");
 
-    const selectedStyle = styles[button.dataset.style];
-    const selectedRoom = rooms[currentRoom];
+    if (roomDescription) {
+      roomDescription.textContent =
+        `${room.title} — ${style.description}`;
+    }
 
-    roomDescription.textContent =
-      `${selectedRoom.title}: ${selectedStyle.description}`;
-
-    roomPalette.textContent = selectedStyle.palette;
+    if (roomPalette) {
+      roomPalette.textContent = style.palette;
+    }
   });
 });
 
-/* Before and after interaction */
 
-const toggleDesign = document.getElementById("toggleDesign");
-const transformationImage = document.getElementById(
-  "transformationImage"
-);
-const transformationStatus = document.getElementById(
-  "transformationStatus"
-);
-const transformationTitle = document.getElementById(
-  "transformationTitle"
-);
-const transformationText = document.getElementById(
-  "transformationText"
-);
+// ========================================
+// BEFORE AND AFTER TRANSFORMATION
+// ========================================
 
-let showingAfter = false;
+const toggleDesignButton = document.getElementById("toggleDesign");
+const transformationImage =
+  document.getElementById("transformationImage");
+const transformationStatus =
+  document.getElementById("transformationStatus");
+const transformationTitle =
+  document.getElementById("transformationTitle");
+const transformationText =
+  document.getElementById("transformationText");
 
-if (toggleDesign) {
-  toggleDesign.addEventListener("click", () => {
-    showingAfter = !showingAfter;
+let showingAfterDesign = false;
 
-    if (showingAfter) {
-      transformationImage.src = "images/after-room.svg";
-      transformationImage.alt =
-        "Room after interior design transformation";
+if (toggleDesignButton) {
+  toggleDesignButton.addEventListener("click", () => {
+    showingAfterDesign = !showingAfterDesign;
 
-      transformationStatus.textContent = "AFTER";
-      transformationTitle.textContent =
-        "A complete, functional room";
+    if (showingAfterDesign) {
+      if (transformationImage) {
+        transformationImage.src = "images/after-room.svg";
+        transformationImage.alt =
+          "Room after interior design transformation";
+      }
 
-      transformationText.textContent =
-        "A clear focal point, improved furniture placement, layered lighting, a cohesive color palette, and added texture make the room feel intentional and comfortable.";
+      if (transformationStatus) {
+        transformationStatus.textContent = "AFTER";
+      }
 
-      toggleDesign.textContent = "Show Before Design";
+      if (transformationTitle) {
+        transformationTitle.textContent =
+          "A balanced and complete room";
+      }
+
+      if (transformationText) {
+        transformationText.textContent =
+          "The redesigned room includes a clear focal point, balanced furniture placement, layered lighting, coordinated colors, and decorative details that make the space feel comfortable and complete.";
+      }
+
+      toggleDesignButton.textContent = "Show Before Design";
     } else {
-      transformationImage.src = "images/before-room.svg";
-      transformationImage.alt =
-        "Room before interior design transformation";
+      if (transformationImage) {
+        transformationImage.src = "images/before-room.svg";
+        transformationImage.alt =
+          "Room before interior design transformation";
+      }
 
-      transformationStatus.textContent = "BEFORE";
-      transformationTitle.textContent =
-        "An unfinished room";
+      if (transformationStatus) {
+        transformationStatus.textContent = "BEFORE";
+      }
 
-      transformationText.textContent =
-        "The room lacks a clear focal point, balanced furniture placement, layered lighting, and decorative details that make the space feel complete.";
+      if (transformationTitle) {
+        transformationTitle.textContent =
+          "An unfinished room";
+      }
 
-      toggleDesign.textContent = "Show After Design";
+      if (transformationText) {
+        transformationText.textContent =
+          "The room lacks a clear focal point, balanced furniture placement, layered lighting, and decorative details that make the space feel complete.";
+      }
+
+      toggleDesignButton.textContent = "Show After Design";
     }
   });
 }
 
-/* Mobile navigation */
+
+// ========================================
+// MOBILE NAVIGATION MENU
+// ========================================
 
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
+const navigationLinks = document.querySelectorAll(".main-nav a");
 
 if (menuToggle && mainNav) {
   menuToggle.addEventListener("click", () => {
@@ -235,18 +381,23 @@ if (menuToggle && mainNav) {
 
     menuToggle.setAttribute(
       "aria-expanded",
-      String(menuIsOpen)
+      menuIsOpen.toString()
     );
 
-    menuToggle.setAttribute(
-      "aria-label",
-      menuIsOpen
-        ? "Close navigation"
-        : "Open navigation"
-    );
+    if (menuIsOpen) {
+      menuToggle.setAttribute(
+        "aria-label",
+        "Close navigation"
+      );
+    } else {
+      menuToggle.setAttribute(
+        "aria-label",
+        "Open navigation"
+      );
+    }
   });
 
-  mainNav.querySelectorAll("a").forEach((link) => {
+  navigationLinks.forEach((link) => {
     link.addEventListener("click", () => {
       mainNav.classList.remove("open");
 
@@ -263,23 +414,87 @@ if (menuToggle && mainNav) {
   });
 }
 
-/* Back to Top button */
 
-const backToTop = document.getElementById("backToTop");
+// ========================================
+// BACK TO TOP BUTTON REVISION
+// ========================================
 
-if (backToTop) {
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 500) {
-      backToTop.classList.add("visible");
-    } else {
-      backToTop.classList.remove("visible");
-    }
-  });
+const backToTopButton = document.getElementById("backToTop");
 
-  backToTop.addEventListener("click", () => {
+function updateBackToTopButton() {
+  if (!backToTopButton) {
+    return;
+  }
+
+  if (window.scrollY > 300) {
+    backToTopButton.classList.add("visible");
+  } else {
+    backToTopButton.classList.remove("visible");
+  }
+}
+
+if (backToTopButton) {
+  window.addEventListener("scroll", updateBackToTopButton);
+
+  backToTopButton.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth"
     });
   });
+
+  updateBackToTopButton();
 }
+
+
+// ========================================
+// SMOOTH SCROLLING FOR PAGE LINKS
+// ========================================
+
+const pageLinks = document.querySelectorAll('a[href^="#"]');
+
+pageLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
+
+    if (!targetId || targetId === "#") {
+      return;
+    }
+
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      event.preventDefault();
+
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
+});
+
+
+// ========================================
+// RESET MOBILE MENU WHEN SCREEN RESIZES
+// ========================================
+
+window.addEventListener("resize", () => {
+  if (
+    window.innerWidth > 768 &&
+    mainNav &&
+    menuToggle
+  ) {
+    mainNav.classList.remove("open");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    menuToggle.setAttribute(
+      "aria-label",
+      "Open navigation"
+    );
+  }
+});
