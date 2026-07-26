@@ -2,14 +2,16 @@
 
 :root {
   --cream: #f6f1e8;
+  --cream-dark: #e9dfd1;
+  --light-olive: #e2e6d5;
   --white: #ffffff;
   --text: #25241f;
-  --muted: #6d685f;
-  --olive: #7f8261;
-  --olive-dark: #5f6246;
+  --muted: #625d54;
+  --olive: #737753;
+  --olive-dark: #4f5338;
   --tan: #d7cab8;
-  --line: #ddd5c9;
-  --shadow: 0 18px 45px rgba(55, 47, 38, 0.12);
+  --line: #cfc4b5;
+  --shadow: 0 18px 45px rgba(55, 47, 38, 0.14);
 }
 
 * {
@@ -18,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -42,6 +45,14 @@ button {
   cursor: pointer;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--olive-dark);
+  outline-offset: 4px;
+}
+
+/* Header and navigation */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -51,7 +62,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(246, 241, 232, 0.96);
+  background: rgba(246, 241, 232, 0.98);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(12px);
 }
@@ -65,7 +76,7 @@ button {
 }
 
 .logo span {
-  color: var(--olive);
+  color: var(--olive-dark);
 }
 
 .main-nav {
@@ -86,7 +97,7 @@ button {
 
 .menu-toggle {
   display: none;
-  padding: 0;
+  padding: 0.6rem;
   background: transparent;
   border: 0;
 }
@@ -98,6 +109,8 @@ button {
   margin: 5px 0;
   background: var(--text);
 }
+
+/* Hero */
 
 .hero {
   min-height: 78vh;
@@ -153,27 +166,32 @@ h3 {
   font-size: clamp(1rem, 2vw, 1.4rem);
 }
 
+/* Buttons */
+
 .button {
   display: inline-block;
+  min-height: 48px;
   padding: 0.9rem 1.3rem;
-  border: 1px solid var(--olive);
+  border: 1px solid var(--olive-dark);
   text-decoration: none;
   font-weight: 700;
 }
 
 .primary-button {
-  background: var(--olive);
+  background: var(--olive-dark);
   color: var(--white);
 }
 
 .primary-button:hover {
-  background: var(--olive-dark);
+  background: #3f432d;
 }
+
+/* Main sections */
 
 .section {
   width: min(1180px, 88vw);
   margin: 0 auto;
-  padding: 6rem 0;
+  padding: 7rem 0;
 }
 
 .intro {
@@ -190,8 +208,8 @@ h3 {
 }
 
 .section-heading {
-  max-width: 720px;
-  margin: 0 auto 2.8rem;
+  max-width: 760px;
+  margin: 0 auto 3.2rem;
   text-align: center;
 }
 
@@ -199,16 +217,47 @@ h3 {
   color: var(--muted);
 }
 
+/* Stronger contrast between sections */
+
+.rooms-section {
+  width: 100%;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  background: var(--cream-dark);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.before-after {
+  width: 100%;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  background: var(--light-olive);
+  border-top: 1px solid #c4c9b1;
+  border-bottom: 1px solid #c4c9b1;
+}
+
+/* Room cards */
+
 .room-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .room-card {
   overflow: hidden;
   background: var(--white);
-  box-shadow: 0 8px 28px rgba(55, 47, 38, 0.08);
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 28px rgba(55, 47, 38, 0.1);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
 }
 
 .room-card img {
@@ -218,7 +267,7 @@ h3 {
 }
 
 .card-content {
-  padding: 1.35rem;
+  padding: 1.5rem;
 }
 
 .card-content p {
@@ -229,7 +278,8 @@ h3 {
 
 .room-button,
 .style-button {
-  padding: 0.65rem 0.9rem;
+  min-height: 44px;
+  padding: 0.7rem 1rem;
   background: transparent;
   border: 1px solid var(--text);
   color: var(--text);
@@ -243,10 +293,12 @@ h3 {
   color: var(--white);
 }
 
+/* Selected room feature */
+
 .showcase {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 4rem;
+  gap: 4.5rem;
   align-items: center;
 }
 
@@ -270,7 +322,7 @@ h3 {
   display: grid;
   grid-template-columns: 155px 1fr;
   gap: 1rem;
-  padding: 0.9rem 0;
+  padding: 1rem 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -281,13 +333,16 @@ h3 {
 .style-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.75rem;
 }
+
+/* Before and after section */
 
 .transformation-card {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   background: var(--white);
+  border: 1px solid #c4c9b1;
   box-shadow: var(--shadow);
 }
 
@@ -317,6 +372,30 @@ h3 {
   letter-spacing: 0.18em;
 }
 
+/* Design principles clarification */
+
+.principles {
+  padding-top: 8rem;
+}
+
+.principles-intro {
+  margin-bottom: 3.5rem;
+}
+
+.section-divider {
+  width: 90px;
+  height: 4px;
+  margin: 0 auto 2.5rem;
+  background: var(--olive-dark);
+}
+
+.principles .section-heading {
+  padding: 2.5rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(55, 47, 38, 0.08);
+}
+
 .principle-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -333,7 +412,7 @@ h3 {
 }
 
 .principle-grid span {
-  color: var(--olive);
+  color: var(--olive-dark);
   font-size: 0.8rem;
   font-weight: 700;
 }
@@ -347,6 +426,44 @@ h3 {
 .principle-grid p {
   color: var(--muted);
 }
+
+/* Back to Top button */
+
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 46px;
+  padding: 0.75rem 1rem;
+  border: 0;
+  background: var(--olive-dark);
+  color: var(--white);
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(37, 36, 31, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #3f432d;
+}
+
+/* Footer */
 
 footer {
   padding: 2.5rem 6vw;
@@ -383,6 +500,8 @@ footer > p:last-child {
   font-size: 0.88rem;
 }
 
+/* Tablet layout */
+
 @media (max-width: 950px) {
   .menu-toggle {
     display: block;
@@ -406,7 +525,7 @@ footer > p:last-child {
   }
 
   .main-nav a {
-    padding: 0.85rem 0;
+    padding: 0.95rem 0;
     border-bottom: 1px solid var(--line);
   }
 
@@ -437,22 +556,49 @@ footer > p:last-child {
   }
 }
 
+/* Mobile layout improvements */
+
 @media (max-width: 620px) {
   .site-header {
     min-height: 68px;
+    padding: 0 5vw;
+  }
+
+  .logo {
+    max-width: 70%;
+    font-size: 0.82rem;
   }
 
   .main-nav {
     top: 68px;
+    padding: 0.6rem 5vw 1rem;
+  }
+
+  .main-nav a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
   }
 
   .hero {
     min-height: 68vh;
+    padding: 4.5rem 5vw;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 16vw, 4.7rem);
   }
 
   .section {
     width: 90vw;
-    padding: 4.25rem 0;
+    padding: 4.75rem 0;
+  }
+
+  .rooms-section,
+  .before-after {
+    width: 100%;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
 
   .intro,
@@ -462,11 +608,36 @@ footer > p:last-child {
   }
 
   .intro {
-    gap: 1rem;
+    gap: 1.25rem;
+  }
+
+  .section-heading {
+    margin-bottom: 2.3rem;
+  }
+
+  .card-content {
+    padding: 1.3rem;
   }
 
   .card-content p {
     min-height: auto;
+  }
+
+  .room-button,
+  .style-button,
+  .button {
+    width: 100%;
+    min-height: 48px;
+    text-align: center;
+  }
+
+  .showcase {
+    gap: 2rem;
+  }
+
+  .showcase-image-wrap img,
+  .transformation-card img {
+    min-height: 280px;
   }
 
   .room-details div {
@@ -474,8 +645,50 @@ footer > p:last-child {
     gap: 0.25rem;
   }
 
+  .style-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
   .transformation-copy {
-    padding: 2rem;
+    padding: 2rem 1.4rem;
+  }
+
+  .principles {
+    padding-top: 5.5rem;
+  }
+
+  .principles .section-heading {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .principle-grid article {
+    min-height: auto;
+    padding: 1.6rem;
+  }
+
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  footer {
+    padding: 2.3rem 5vw;
+    gap: 1.4rem;
   }
 }
 
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
